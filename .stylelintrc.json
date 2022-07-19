@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-html/svelte"
+  ],
+  "plugins": [
+		"stylelint-order"
+	],
+  "overrides": [
+    {
+      "files": ["*.svelte", "**/*.svelte"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "value-list-comma-newline-after": "always-multi-line",
+    "order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-order": [
+      "position",
+			"width",
+			"height",
+      "display"
+		]
+  }
+}

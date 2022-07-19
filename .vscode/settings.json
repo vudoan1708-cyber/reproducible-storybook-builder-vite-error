@@ -1,0 +1,17 @@
+{
+  "files.eol": "\n",
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "svelte"
+  ],
+  "stylelint.validate": [
+    "svelte",
+    "css",
+  ],
+  "files.associations": {
+    "*.svelte": "svelte"
+  }
+}

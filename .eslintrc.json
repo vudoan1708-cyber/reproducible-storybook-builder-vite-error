@@ -1,0 +1,119 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@ota-meshi/svelte/recommended"
+  ],
+  "plugins": [],
+  "ignorePatterns": [
+    "public/build/"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      // "processor": "svelte3/svelte3"
+      "parser": "svelte-eslint-parser",
+      // AirBnB's ESLint config rules with indentation can conflict with svelte-eslint-parser's, hence disable one of them
+      "rules": {
+        // svelte-eslint-parser's
+        "@ota-meshi/svelte/indent": [
+          "error",
+          {
+            "indent": 2,
+            "ignoredNodes": [],
+            "switchCase": 1,
+            "alignAttributesVertically": true
+          }
+        ],
+        // AirBnB's
+        "indent": "off",
+        "@ota-meshi/svelte/first-attribute-linebreak": [
+          "error",
+          {
+            "multiline": "below",
+            "singleline": "beside"
+          }
+        ],
+        "@ota-meshi/svelte/max-attributes-per-line": [
+          "error",
+          {
+            "multiline": 1,
+            "singleline": 3
+          }
+        ],
+        "@ota-meshi/svelte/html-quotes": [
+          "error",
+          {
+            "prefer": "double",
+            "dynamic": {
+              "quoted": false,
+              "avoidInvalidUnquotedInHTML": false
+            }
+          }
+        ],
+        "@ota-meshi/svelte/shorthand-directive": [
+          "error",
+          {
+            "prefer": "always"
+          }
+        ],
+        "@ota-meshi/svelte/shorthand-attribute": [
+          "error",
+          {
+            "prefer": "always"
+          }
+        ],
+        "@ota-meshi/svelte/no-target-blank": [
+          "error",
+          {
+            "allowReferrer": true,
+            "enforceDynamicLinks": "always"
+          }
+        ],
+        "@ota-meshi/svelte/spaced-html-comment": [
+          "error",
+          "always"
+        ]
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "FunctionDeclaration": { "parameters": "first" },
+        "FunctionExpression": { "parameters": "first" }
+      }
+    ],
+    "no-trailing-spaces": [
+      "error",
+      { "skipBlankLines": false }
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "function-paren-newline": ["error", "never"],
+    "no-extra-boolean-cast": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "error", 
+      { "code": 120 }
+    ]
+  }
+}
